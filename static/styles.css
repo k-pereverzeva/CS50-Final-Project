@@ -1,0 +1,97 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+    
+    /*background-image: url("images.jpeg");*/
+    /*width: 540px;*/
+    /*height: 996px;*/
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+    
+    /*background-image: url("image.png");*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+a{
+    color: #CB9100;
+}
+
+.boxx
+{
+    color: brown;
+    background: cornsilk;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.box
+{
+    color: brown;
+    background: cornsilk;
+    height: 200px;
+    font-size: 35px;
+    margin: 20px;
+    padding: 70px;
+    background-color: rgba(255,255,255,0.8);
+    
+
+}
+
+.table_box
+{
+    background-color: rgba(255,255,255,0.8);
+}
+
+.background
+{
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-image: url("palm.png");*/
+    background-image: url("https://viaoboi.ru/wp-content/uploads/2018/05/shutterstock_164590610.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}

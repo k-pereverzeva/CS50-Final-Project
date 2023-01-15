@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Future
+{% endblock %}
+
+{% block main %}
+    <div class="page-header ">
+        <div class="table_box">
+            <h1>Your upcoming trips</h1>
+        </div>
+    </div>
+    <div class="table_box">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Town</th>
+                    <th>Country</th>
+                    <th>Arrive date</th>
+                    <th>Departure date</th>
+                    <th></th>
+                </tr>
+                <tbody>
+                {% for trip in trips %}
+                    <tr>
+                        <td id="edit" >{{ trip['name'] }}</td>
+                        <td id="edit" >{{ trip['town'] }}</td>
+                        <td id="edit" >{{ trip['country'] }}</td>
+                        <td id="edit" >{{ trip['arrive'] }}</td>
+                        <td id="edit" >{{ trip['departure'] }}</td>
+                        <td><a href="edit/{{trip.id}}" class="btn btn-info">Edit</a></td>
+                            
+                        <td>
+                            <form action="{{url_for('delete', id=trip.id)}}" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
+                        </td>
+                        
+                    </tr>
+                {% endfor %}
+    
+                </tbody>
+            </thead>
+        </table>
+    </div>
+    
+{% endblock %}

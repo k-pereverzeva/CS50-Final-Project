@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Baggage
+{% endblock %}
+
+{% block main %}
+    <div class="page-header">
+        <p></p>
+    </div>
+    
+    <form action="/baggage" method="post">
+        <div class="form-group">
+            <select class="form-control" name="name">
+                <option disabled selected value="">Trip's name</option>
+                    {% for option in options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+            </select>
+        <input autocomplete="off" autofocus name="item" placeholder="What to take" type="text">
+        <input class = "btn btn-primary" type="submit" value="Add">
+        </div>
+    </form>
+    
+{% endblock %}

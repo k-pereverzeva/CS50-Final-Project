@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Baggages
+{% endblock %}
+
+{% block main %}
+    <form action="/baggages" method="post">
+        <div class="form-group">
+            <select id = "name" class="form-control" name="name" onchange="RRfunction(trip_id)">
+                <option disabled selected value="">Trip's name</option>
+                    {% for option in options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+            </select>
+            <input class = "btn btn-primary" type="submit" value="Submit">
+        </div>
+    </form>
+    <div class="table_box">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Done
+                    </th>
+                    <th>Item</th>
+                </tr>
+                <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>
+                            <form action="{{url_for('check', id=item.id)}}" method="post">
+                                <input
+                                    id="check"
+                                    class="save-cb-state"
+                                    type="checkbox"
+                                    name="check"
+                                    value="{{ item['id'] }}"
+                                    {{ 'checked' if item['taken'] == 'TRUE' else '' }}>
+                            </form>
+                        </td>
+                        <td>{{ item['item'] }}</td>
+                        <td>
+                            <form action="{{url_for('delete_bag', id=item.id)}}" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </thead>
+        </table>
+    </div>
+    <script>
+        const inputs = document.querySelectorAll('input');
+
+        inputs.forEach((elem) => {
+            elem.onchange = (e) => {
+                e.target.parentNode.submit()
+            }
+        })
+
+    </script>
+    
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div class="page-header ">
+        <div class="table_box">
+            <h1>Your past trips</h1>
+        </div>
+    </div>
+    <div class="table_box">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Town</th>
+                    <th>Country</th>
+                    <th>Arrive date</th>
+                    <th>Departure date</th>
+                </tr>
+                <tbody>
+                    {% for trip in trips %}
+                        <tr>
+                            <td>{{ trip['name'] }}</td>
+                            <td>{{ trip['town'] }}</td>
+                            <td>{{ trip['country'] }}</td>
+                            <td>{{ trip['arrive'] }}</td>
+                            <td>{{ trip['departure'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </thead>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit trip
+{% endblock %}
+
+{% block main %}
+
+    <div class="page-header">
+        <p></p>
+    </div>
+    <form action="" method="post">
+        {% for trip in trips %}
+            <input autocomplete="off" name="name" type="text" value="{{ trip['name'] }}">
+            <input autocomplete="off" name="town" type="text" value="{{ trip['town'] }}">
+            <input autocomplete="off" name="country" type="text" value="{{ trip['country'] }}">
+            <input autocomplete="off" name="arrive" type="date" value="{{ trip['arrive'] }}">
+            <input autocomplete="off" name="departure" type="date" value="{{ trip['departure'] }}">
+            <input class="btn btn-success" type="submit" value="Edit">
+        {% endfor %}
+    </form>
+    
+{% endblock %}

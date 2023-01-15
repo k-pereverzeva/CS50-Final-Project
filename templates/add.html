@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+
+    <div class="page-header">
+        <p></p>
+    </div>
+    <form action="/add" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name of trip" type="text">
+        <input autocomplete="off" autofocus name="town" placeholder="Town" type="text">
+        <input autocomplete="off" autofocus name="country" placeholder="Country" type="text">
+        <input autocomplete="off" autofocus name="arrive" placeholder="Arrival date" type="date">
+        <input autocomplete="off" autofocus name="departure" placeholder="Departure date" type="date">
+        <input type="submit" value="Add">
+    </form>
+    
+{% endblock %}
